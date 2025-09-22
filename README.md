@@ -4,7 +4,13 @@ A synthetic **Security Information and Event Management (SIEM)** dashboard built
 It simulates security incidents, user/entity behavior events (UEBA), and provides anomaly detection + key metrics in real time.
 
 ---
+## 📸 Preview
 
+### Dashboard Overview
+![Dashboard Preview](src/screenshot1.png)
+
+### UEBA Anomalies Over Time
+![UEBA Anomalies](src/screenshot2.png)
 ## 🚀 Features
 
 - **Synthetic Data Generators**
