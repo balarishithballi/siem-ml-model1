@@ -1,4 +1,3 @@
-# app.py
 import numpy as np
 import pandas as pd
 import streamlit as st
@@ -23,7 +22,6 @@ except Exception:
 st.set_page_config(page_title="SIEM Demo", layout="wide")
 np.random.seed(42)
 
-# ---------- Generators (same as script, parameterized) ----------
 def make_incidents(n=2000, start="2025-01-01"):
     rng = np.random.default_rng(42)
     start_ts = pd.to_datetime(start)
@@ -85,17 +83,14 @@ def make_ueba(m=6000, start="2025-01-01", contamination=0.05):
     df["anomaly_label"] = model.predict(scaler.transform(feats))
     return df
 
-# ---------- Sidebar controls ----------
 st.sidebar.header("Controls")
 n_inc = st.sidebar.slider("Incidents", 500, 5000, 2000, 100)
 n_ueba = st.sidebar.slider("UEBA events", 1000, 20000, 6000, 500)
 contam = st.sidebar.slider("UEBA contamination", 0.01, 0.15, 0.05, 0.01)
 
-# ---------- Data ----------
 inc = make_incidents(n=n_inc)
 ueba = make_ueba(m=n_ueba, contamination=contam)
 
-# ---------- Metrics ----------
 def m_detected(df): return int((df["is_detected"] == 1).sum())
 def m_mttd(df): return float((pd.to_datetime(df["detected_at"]) - pd.to_datetime(df["timestamp"])).dt.total_seconds().div(3600).mean())
 def m_mttr(df): return float((pd.to_datetime(df["responded_at"]) - pd.to_datetime(df["detected_at"])).dt.total_seconds().div(3600).mean())
@@ -143,11 +138,9 @@ cov = m_compliance(inc)
 corr = m_corr_precision(ueba)
 ueba_anoms = int(ueba["anomaly_label"].sum())
 
-# ---------- Header ----------
 st.title("Interactive SIEM Demo")
 st.caption("Synthetic incidents + UEBA with 10 KPIs and anomaly detection")
 
-# ---------- KPI tiles ----------
 col1, col2, col3, col4, col5 = st.columns(5)
 col1.metric("Detected Incidents", f"{det_count}")
 col2.metric("MTTD (h)", f"{mttd:.2f}")
@@ -162,7 +155,6 @@ col8.metric("Compliance Coverage", f"{cov:.3f}")
 col9.metric("Incidents", f"{len(inc):,}")
 col10.metric("UEBA Events", f"{len(ueba):,}")
 
-# ---------- Charts ----------
 left, right = st.columns(2)
 
 with left:
