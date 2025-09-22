@@ -48,7 +48,7 @@ Clone the repository:
 
 ```bash
 https://github.com/balarishithballi/siem-ml-model1
-cd siem-demo
+cd siem-ml-model
 ```
 
 Create and activate a virtual environment (recommended):
@@ -71,7 +71,7 @@ pip install -r requirements.txt
 Run the Streamlit app:
 
 ```bash
-streamlit run app.py
+streamlit run ml_model.py
 ```
 
 Then open the link shown in your terminal (usually [http://localhost:8501](http://localhost:8501)).
