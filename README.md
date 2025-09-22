@@ -37,7 +37,7 @@ It simulates security incidents, user/entity behavior events (UEBA), and provide
 Clone the repository:
 
 ```bash
-git clone https://github.com/yourusername/siem-demo.git
+https://github.com/balarishithballi/siem-ml-model1
 cd siem-demo
 ```
 
