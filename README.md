@@ -7,10 +7,10 @@ It simulates security incidents, user/entity behavior events (UEBA), and provide
 ## 📸 Preview
 
 ### Dashboard Overview
-![Dashboard Preview](src/screenshot1.png)
+![Dashboard Preview](src/dashboard.png)
 
 ### UEBA Anomalies Over Time
-![UEBA Anomalies](src/screenshot2.png)
+![UEBA Anomalies](src/ueab.png)
 ## 🚀 Features
 
 - **Synthetic Data Generators**
