@@ -48,7 +48,7 @@ Clone the repository:
 
 ```bash
 git clone https://github.com/balarishithballi/siem-ml-model1
-cd siem-ml-model
+cd siem-ml-model1
 ```
 
 Create and activate a virtual environment (recommended):
